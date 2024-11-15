@@ -18,17 +18,10 @@ public class Util {
             Object obj = parser.parse(JSON);
             JSONArray jsonArray = (JSONArray) obj;
 
-            ArrayList<JSONObject> list = new ArrayList<>();
+            List<Album> list = new ArrayList<>();
             for (Object object : jsonArray) {
                 JSONObject jsonObject = (JSONObject) object;
-                list.add(jsonObject);
-            }
-
-            List<Album> res = new ArrayList<>();
-
-            // Hiển thị kết quả
-            for (JSONObject jsonObject : list) {
-                res.add(
+                list.add(
                         new Album(
                                 (long) jsonObject.get("id"),
                                 (long) jsonObject.get("userId"),
@@ -36,8 +29,7 @@ public class Util {
                         )
                 );
             }
-
-            return res;
+            return list;
 
         } catch (ParseException e) {
             e.printStackTrace();

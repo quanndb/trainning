@@ -7,7 +7,7 @@ import java.net.http.HttpResponse;
 public class HTTPClientConnector implements Connector {
     private final HttpClient client = HttpClient.newHttpClient();
 
-    private String baseURL;
+    private final String baseURL;
 
     public HTTPClientConnector(String baseURL){
         this.baseURL = baseURL;
