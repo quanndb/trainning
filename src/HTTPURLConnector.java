@@ -17,7 +17,6 @@ public class HTTPURLConnector implements Connector {
         httpURLConnection.setRequestMethod("GET");
 
         int responseCode = httpURLConnection.getResponseCode();
-        System.out.println("GET Response Code :: " + responseCode);
 
         if (responseCode == HttpURLConnection.HTTP_OK) {
             BufferedReader in = new BufferedReader(new InputStreamReader(httpURLConnection
